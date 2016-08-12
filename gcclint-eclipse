@@ -1,0 +1,12 @@
+#!/bin/bash
+
+proj_path="$1"
+shift 1
+args=$*
+
+cd "$proj_path"
+(for i in `find . -iname '*.cpp'`; do echo "$proj_path/$i"; done) >proj_files.lnt
+gcclint "$proj_path/proj_files.lnt" \
+	| grep -v Z:/usr/include \
+	| grep -v 'Location cited in prior message' \
+	| sed -r 's/Z:\/home\//\/home\//g'
