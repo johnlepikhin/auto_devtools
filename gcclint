@@ -123,5 +123,5 @@ set -o pipefail
 # Now, invoke PC-Lint.
 # Remove trailing \r characters and turn all backslashes into forward slashes
 # (to get posix-style pathnames).
-$PCLINT_EXE $PREOPTS -I$SETTINGS_DIR -I$PCLINT_PATH/lnt co-gcc.lnt $INCLUDE_PATH_FILE $JOHN_ECLIPSE $* | tr '\\\r' '/ ' 
+wine $PCLINT_EXE $PREOPTS -I$SETTINGS_DIR -I$PCLINT_PATH/lnt co-gcc.lnt $INCLUDE_PATH_FILE $JOHN_ECLIPSE $* | tr '\\\r' '/ ' 
 
