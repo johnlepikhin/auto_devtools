@@ -48,6 +48,7 @@ function die
 
 INCLUDE_PATH_FILE="include.lnt"
 JOHN_ECLIPSE="eclipse_msg.lnt"
+JOHN_INCLUDE="john.lnt"
 GCC="/usr/bin/gcc"
 GPP="/usr/bin/g++"
 USE_CYGWIN=0
@@ -123,5 +124,5 @@ set -o pipefail
 # Now, invoke PC-Lint.
 # Remove trailing \r characters and turn all backslashes into forward slashes
 # (to get posix-style pathnames).
-wine $PCLINT_EXE $PREOPTS -I$SETTINGS_DIR -I$PCLINT_PATH/lnt co-gcc.lnt $INCLUDE_PATH_FILE $JOHN_ECLIPSE $* | tr '\\\r' '/ ' 
+wine $PCLINT_EXE $PREOPTS -I$SETTINGS_DIR -I$PCLINT_PATH/lnt co-gcc.lnt $INCLUDE_PATH_FILE $JOHN_ECLIPSE $JOHN_INCLUDE $* | tr '\\\r' '/ ' 
 
