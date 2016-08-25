@@ -4,6 +4,9 @@ proj_path="$1"
 shift 1
 args=$*
 
+export PATH="~/bin:$PATH"
+export PCLINT_PATH="/opt/pc-lint"
+
 cd "$proj_path"
 (for i in `find . -iname '*.cpp' | egrep -v ^./tests/`; do echo "$proj_path/$i"; done) >proj_files.lnt
 gcclint "$proj_path/proj_files.lnt" \
