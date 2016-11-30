@@ -3,4 +3,4 @@
 /home/eugene/bin/how-to-use-pvs-studio-free -c 2 ../
 pvs-studio-analyzer trace -- make -j4 $1
 pvs-studio-analyzer analyze -a 0 -j4 -o PVS-Studio.log >/dev/null 2>&1
-plog-converter -t errorfile PVS-Studio.log | grep -v 'Help: The documentation for all analyzer warnings is available here'
+plog-converter -a 'GA;64;OP;CS' -t errorfile PVS-Studio.log | grep -v 'Help: The documentation for all analyzer warnings is available here'
